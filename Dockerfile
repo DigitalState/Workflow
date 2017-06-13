@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENV VERSION 7.6.0
+ENV VERSION 7.7.0
 ENV DISTRO tomcat
 ENV SERVER apache-tomcat-8.0.24
 ENV LIB_DIR /camunda/lib/
@@ -11,6 +11,8 @@ ENV LANG en_US.UTF-8
 WORKDIR /camunda
 
 # generate locale
+RUN apt-get clean && apt-get update
+RUN apt-get install locales
 RUN locale-gen en_US.UTF-8
 
 # install oracle java
@@ -28,9 +30,28 @@ RUN wget -O - "${NEXUS}?r=public&g=org.camunda.bpm.${DISTRO}&a=camunda-bpm-${DIS
 
 # add scripts
 ADD bin/* /usr/local/bin/
+RUN chmod +x /usr/local/bin/*
 
 # add database drivers
+RUN chmod +x /usr/local/bin/download-database-drivers.sh
 RUN /usr/local/bin/download-database-drivers.sh "${NEXUS}?r=public&g=org.camunda.bpm&a=camunda-database-settings&v=${VERSION}&p=pom"
+
+# add branding files
+COPY docker/camunda/commons/assets/ webapps/camunda/app/welcome/assets
+COPY docker/camunda/commons/styles/ webapps/camunda/app/welcome/styles
+COPY docker/camunda/welcome/index.html webapps/camunda/app/welcome
+
+COPY docker/camunda/commons/assets/ webapps/camunda/app/admin/assets
+COPY docker/camunda/commons/styles/ webapps/camunda/app/admin/styles
+COPY docker/camunda/admin/index.html webapps/camunda/app/admin
+
+COPY docker/camunda/commons/assets/ webapps/camunda/app/cockpit/assets
+COPY docker/camunda/commons/styles/ webapps/camunda/app/cockpit/styles
+COPY docker/camunda/cockpit/index.html webapps/camunda/app/cockpit
+
+COPY docker/camunda/commons/assets/ webapps/camunda/app/tasklist/assets
+COPY docker/camunda/commons/styles/ webapps/camunda/app/tasklist/styles
+COPY docker/camunda/tasklist/index.html webapps/camunda/app/tasklist
 
 EXPOSE 8080
 
