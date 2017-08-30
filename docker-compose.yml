@@ -2,6 +2,6 @@ camunda:
     # image: camunda/camunda-bpm-platform:tomcat-7.7.0
     build: .
     environment:
-      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom
+      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
     ports:
       - "8055:8080"
