@@ -32,13 +32,13 @@
 
 
     <!-- styles -->
-    <link href="$APP_ROOT/app/cockpit/styles/styles.css?bust=7.7.0-alpha1"
+    <link href="$APP_ROOT/app/cockpit/styles/styles.css?bust=7.7.0"
           rel="stylesheet" />
-    <link href="$APP_ROOT/app/cockpit/styles/styles-components.css?bust=7.7.0-alpha1"
+    <link href="$APP_ROOT/app/cockpit/styles/styles-components.css?bust=7.7.0"
           rel="stylesheet" />
     <link rel="stylesheet"
           type="text/css"
-          href="$APP_ROOT/app/cockpit/styles/user-styles.css?bust=7.7.0-alpha1">
+          href="$APP_ROOT/app/cockpit/styles/user-styles.css?bust=7.7.0">
 
     <!-- favicon -->
     <link rel="shortcut icon"
@@ -112,7 +112,7 @@
 
     <!-- footer -->
     <footer cam-widget-footer
-            version="v7.7.0-alpha1"></footer>
+            version="v7.7.0"></footer>
 
     <script type="application/javascript">
       var cockpitConf = window.cockpitConf = {};
@@ -143,7 +143,7 @@ window.require = undefined;
 
 requirejs.config({
   baseUrl: '$APP_ROOT/app/cockpit',
-  urlArgs: 'bust=7.7.0-alpha1'
+  urlArgs: 'bust=7.7.0'
 });
 requirejs(['$APP_ROOT/lib/deps.js'], function () {
   requirejs(['$APP_ROOT/app/cockpit/camunda-cockpit-bootstrap.js'], function(){});
