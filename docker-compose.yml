@@ -1,7 +1,13 @@
-camunda:
-    # image: camunda/camunda-bpm-platform:tomcat-7.7.0
-    build: .
-    environment:
-      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
-    ports:
-      - "8055:8080"
+version: '2.1'
+
+services:
+    camunda:
+        build: .
+        environment:
+            JAVA_OPTS: -Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
+            VIRTUAL_HOST: api.camunda.ds
+
+networks:
+    default:
+        external:
+          name: api_default
