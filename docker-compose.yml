@@ -4,8 +4,8 @@ services:
     camunda:
         build: .
         environment:
-            JAVA_OPTS: -Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
-            VIRTUAL_HOST: api.camunda.ds
+            - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
+            - VIRTUAL_HOST
 
 networks:
     default:
