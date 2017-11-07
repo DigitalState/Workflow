@@ -6,8 +6,22 @@ services:
         environment:
             - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
             - VIRTUAL_HOST
+        extra_hosts:
+            - 'api.assets.ds:${PROXY_HOST}'
+            - 'api.authentication.ds:${PROXY_HOST}'
+            - 'api.camunda.ds:${PROXY_HOST}'
+            - 'api.cases.ds:${PROXY_HOST}'
+            - 'api.cms.ds:${PROXY_HOST}'
+            - 'api.discovery.ds:${PROXY_HOST}'
+            - 'api.identities.ds:${PROXY_HOST}'
+            - 'api.interactions.ds:${PROXY_HOST}'
+            - 'api.logs.ds:${PROXY_HOST}'
+            - 'api.records.ds:${PROXY_HOST}'
+            - 'api.services.ds:${PROXY_HOST}'
+            - 'api.tasks.ds:${PROXY_HOST}'
+            - 'api.topics.ds:${PROXY_HOST}'
 
 networks:
     default:
         external:
-          name: api_default
+          name: '${PROXY_NETWORK}'
