@@ -1,10 +1,10 @@
 version: '2.1'
 
 services:
-    camunda:
+    camunda_camunda:
         build: .
         environment:
-            - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
+            - JAVA_OPTS
             - VIRTUAL_HOST
         extra_hosts:
             - 'api.assets.ds:${PROXY_HOST}'
@@ -13,6 +13,7 @@ services:
             - 'api.cases.ds:${PROXY_HOST}'
             - 'api.cms.ds:${PROXY_HOST}'
             - 'api.discovery.ds:${PROXY_HOST}'
+            - 'api.formio.ds:${PROXY_HOST}'
             - 'api.identities.ds:${PROXY_HOST}'
             - 'api.interactions.ds:${PROXY_HOST}'
             - 'api.logs.ds:${PROXY_HOST}'
