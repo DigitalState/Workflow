@@ -25,4 +25,4 @@ services:
 networks:
     default:
         external:
-          name: '${PROXY_NETWORK}'
+          name: '${NETWORK}'
