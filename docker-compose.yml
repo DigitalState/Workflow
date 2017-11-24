@@ -1,7 +1,7 @@
 version: '2.1'
 
 services:
-    camunda_camunda:
+    camunda:
         build: .
         environment:
             - JAVA_OPTS
