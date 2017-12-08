@@ -2,6 +2,9 @@ FROM camunda/camunda-bpm-platform:tomcat-7.7.0
 
 COPY docker/camunda/conf/ conf
 
+# Copy third-party Java libraries
+COPY docker/camunda/lib/* lib
+
 COPY docker/camunda/webapps/camunda/commons/assets/ webapps/camunda/app/welcome/assets
 
 COPY docker/camunda/webapps/camunda/commons/styles/ webapps/camunda/app/welcome/styles
