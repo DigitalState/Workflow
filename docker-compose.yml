@@ -3,7 +3,7 @@ version: '2.1'
 services:
     camunda:
         build: .
-        restart: on-failures
+        restart: on-failure
         environment:
             - JAVA_OPTS
             - VIRTUAL_HOST
