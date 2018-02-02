@@ -17,6 +17,7 @@
 
     <!-- settings the base path for relative links -->
     <base href="$BASE"
+          admin-api="$APP_ROOT/api/admin/"
           cockpit-api="$APP_ROOT/api/cockpit/"
           engine-api="$APP_ROOT/api/engine/"
           app-root="$APP_ROOT" />
@@ -32,26 +33,26 @@
 
 
     <!-- styles -->
-    <link href="$APP_ROOT/app/cockpit/styles/styles.css?bust=7.7.0"
+    <link href="$APP_ROOT/app/cockpit/styles/styles.css?bust=7.8.0"
           rel="stylesheet" />
-    <link href="$APP_ROOT/app/cockpit/styles/styles-components.css?bust=7.7.0"
+    <link href="$APP_ROOT/app/cockpit/styles/styles-components.css?bust=7.8.0"
           rel="stylesheet" />
     <link rel="stylesheet"
           type="text/css"
-          href="$APP_ROOT/app/cockpit/styles/user-styles.css?bust=7.7.0">
+          href="$APP_ROOT/app/cockpit/styles/user-styles.css?bust=7.8.0">
 
     <!-- favicon -->
     <link rel="shortcut icon"
           href="$APP_ROOT/app/cockpit/assets/images/favicon.ico"
           type="image/x-icon" />
     <link rel="apple-touch-icon"
-          href="$APP_ROOT/app/cockpit/assets/images/camunda.60.png" />
+          href="$APP_ROOT/app/cockpit/assets/images/ds.60.png" />
     <link rel="apple-touch-icon"
           sizes="72x72"
-          href="$APP_ROOT/app/cockpit/assets/images/camunda.72.png" />
+          href="$APP_ROOT/app/cockpit/assets/images/ds.72.png" />
     <link rel="apple-touch-icon"
           sizes="114x114"
-          href="$APP_ROOT/app/cockpit/assets/images/camunda.114.png" />
+          href="$APP_ROOT/app/cockpit/assets/images/ds.114.png" />
   </head>
   <body>
     <!-- navigation -->
@@ -60,24 +61,26 @@
          user-name="userFullName"
          current-app="cockpit"
          ng-cloak
+         sign-out="{{ 'SIGN_OUT_ACTION' | translate }}"
+         my-profile="{{ 'MY_PROFILE' | translate }}"
          brand-name="Cockpit">
       <ul cam-if-logged-in
           ng-controller="camHeaderViewsCtrl">
         <li ng-repeat="actionProvider in menuActions"
             ng-if="actionProvider.pagePath && actionProvider.accessible"
             ng-class="activeClass(actionProvider)">
-          <a ng-href="{{ actionProvider.pagePath }}">{{ actionProvider.label }}</a>
+          <a ng-href="{{ actionProvider.pagePath }}">{{ actionProvider.label | translate}}</a>
         </li>
 
         <li class="dropdown"
             ng-if="dropdownActions.length">
           <a class="dropdown-toggle"
-             href>More <i class="caret"></i></a>
+             href>{{ 'COCKPIT_MORE' | translate}} <i class="caret"></i></a>
           <ul class="dropdown-menu">
             <li ng-repeat="actionProvider in dropdownActions"
                 ng-if="actionProvider.pagePath && actionProvider.accessible"
                 ng-class="activeClass(actionProvider)">
-              <a ng-href="{{ actionProvider.pagePath }}">{{ actionProvider.label }}</a>
+              <a ng-href="{{ actionProvider.pagePath }}">{{ actionProvider.label | translate}}</a>
             </li>
           </ul>
         </li>
@@ -112,10 +115,10 @@
 
     <!-- footer -->
     <footer cam-widget-footer
-            version="v7.7.0"></footer>
+            version="v7.8.0"></footer>
 
     <script type="application/javascript">
-      var cockpitConf = window.cockpitConf = {};
+      var cockpitConf = window.camCockpitConf = {};
 
       window.PLUGIN_DEPENDENCIES = $PLUGIN_DEPENDENCIES || [];
       window.PLUGIN_PACKAGES = $PLUGIN_PACKAGES || [];
@@ -143,7 +146,7 @@ window.require = undefined;
 
 requirejs.config({
   baseUrl: '$APP_ROOT/app/cockpit',
-  urlArgs: 'bust=7.7.0'
+  urlArgs: 'bust=7.8.0'
 });
 requirejs(['$APP_ROOT/lib/deps.js'], function () {
   requirejs(['$APP_ROOT/app/cockpit/camunda-cockpit-bootstrap.js'], function(){});

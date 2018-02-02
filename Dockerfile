@@ -1,4 +1,4 @@
-FROM camunda/camunda-bpm-platform:tomcat-7.7.0
+FROM camunda/camunda-bpm-platform:tomcat-7.8.0
 
 COPY docker/camunda/conf/ conf
 

@@ -34,11 +34,11 @@
 
 
     <!-- styles -->
-    <link href="$APP_ROOT/app/welcome/styles/styles.css?bust=7.7.0"
+    <link href="$APP_ROOT/app/welcome/styles/styles.css?bust=7.8.0"
           rel="stylesheet" />
     <link rel="stylesheet"
           type="text/css"
-          href="$APP_ROOT/app/welcome/styles/user-styles.css?bust=7.7.0">
+          href="$APP_ROOT/app/welcome/styles/user-styles.css?bust=7.8.0">
 
     <!-- favicon -->
     <link rel="shortcut icon"
@@ -55,18 +55,6 @@
   </head>
   <body ng-controller="WelcomePage as welcomePage">
     <!-- navigation -->
-    <!-- <div cam-widget-header
-         authentication="authentication"
-         user-name="userFullName"
-         current-app="welcome"
-         no-app-switch="true"
-         no-account-menu="true"
-         toggle-navigation="{{ 'TOGGLE_NAVIGATION' | translate }}"
-         sign-out="{{ 'SIGN_OUT_ACTION' | translate }}"
-         my-profile="{{ 'MY_PROFILE' | translate }}"
-         ng-cloak
-         brand-name="{{ welcomePage.appVendor }} {{ welcomePage.appName }}">
-    </div> -->
     <div cam-widget-header
          authentication="authentication"
          user-name="userFullName"
@@ -77,7 +65,7 @@
          sign-out="{{ 'SIGN_OUT_ACTION' | translate }}"
          my-profile="{{ 'MY_PROFILE' | translate }}"
          ng-cloak
-         brand-name="{{ welcomePage.appName }}">
+         brand-name="{{ welcomePage.appVendor }} {{ welcomePage.appName }}">
     </div>
 
     <div notifications-panel
@@ -97,7 +85,7 @@
 
     <!-- footer -->
     <footer cam-widget-footer
-            version="v7.7.0"></footer>
+            version="v7.8.0"></footer>
 
     <script type="application/javascript">
       window.PLUGIN_DEPENDENCIES = $PLUGIN_DEPENDENCIES || [];
@@ -121,7 +109,7 @@ window.require = undefined;
 
 requirejs.config({
   baseUrl: '$APP_ROOT/app/welcome',
-  urlArgs: 'bust=7.7.0'
+  urlArgs: 'bust=7.8.0'
 });
 requirejs(['$APP_ROOT/lib/deps.js'], function () {
   requirejs(['$APP_ROOT/app/welcome/camunda-welcome-bootstrap.js'], function(){});

@@ -32,11 +32,11 @@
 
 
     <!-- styles -->
-    <link href="$APP_ROOT/app/admin/styles/styles.css?bust=7.7.0"
+    <link href="$APP_ROOT/app/admin/styles/styles.css?bust=7.8.0"
           rel="stylesheet" />
     <link rel="stylesheet"
           type="text/css"
-          href="$APP_ROOT/app/admin/styles/user-styles.css?bust=7.7.0">
+          href="$APP_ROOT/app/admin/styles/user-styles.css?bust=7.8.0">
 
     <!-- favicon -->
     <link rel="shortcut icon"
@@ -63,28 +63,28 @@
           ng-controller="NavigationController">
 
         <li ng-class="activeClass('#/user')">
-          <a href="#/users">Users</a>
+          <a href="#/users">{{ 'USERS_USERS' | translate }}</a>
         </li>
 
         <li ng-class="activeClass('#/group')">
-          <a href="#/groups">Groups</a>
+          <a href="#/groups">{{ 'GROUPS_GROUPS' | translate }}</a>
         </li>
 
         <li ng-class="activeClass('#/tenant')">
-          <a href="#/tenants">Tenants</a>
+          <a href="#/tenants">{{ 'TENANTS_TENANTS' | translate }}</a>
         </li>
 
         <li ng-class="activeClass('#/authorization')"
             show-if-authorized
             auth-permission="ALL"
             auth-resource-name="authorization">
-          <a href="#/authorization?resource=0">Authorizations</a>
+          <a href="#/authorization?resource=0">{{ 'AUTHORIZATION_AUTHORIZATIONS' | translate }}</a>
         </li>
         <li ng-class="activeClass('#/system')"
             show-if-authorized
             auth-permission="ALL"
             auth-resource-name="authorization">
-          <a href="#/system?section=system-settings-general">System</a>
+          <a href="#/system?section=system-settings-general">{{ 'SYSTEM_SYSTEM' | translate }}</a>
         </li>
       </ul>
     </div>
@@ -116,10 +116,10 @@
 
     <!-- footer -->
     <footer cam-widget-footer
-            version="v7.7.0"></footer>
+            version="v7.8.0"></footer>
 
     <script type="application/javascript">
-      var adminConf = window.adminConf = {};
+      var adminConf = window.camAdminConf = {};
 
       window.PLUGIN_DEPENDENCIES = $PLUGIN_DEPENDENCIES || [];
       window.PLUGIN_PACKAGES = $PLUGIN_PACKAGES || [];
@@ -147,7 +147,7 @@ window.require = undefined;
 
 requirejs.config({
   baseUrl: '$APP_ROOT/app/admin',
-  urlArgs: 'bust=7.7.0'
+  urlArgs: 'bust=7.8.0'
 });
 requirejs(['$APP_ROOT/lib/deps.js'], function () {
   requirejs(['$APP_ROOT/app/admin/camunda-admin-bootstrap.js'], function () {});
