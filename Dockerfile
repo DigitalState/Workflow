@@ -11,6 +11,8 @@ COPY docker/camunda/webapps/camunda/commons/styles/ webapps/camunda/app/welcome/
 
 COPY docker/camunda/webapps/camunda/welcome/index.html webapps/camunda/app/welcome
 
+COPY docker/camunda/webapps/camunda/welcome/scripts/config.js webapps/camunda/app/welcome/scripts
+
 COPY docker/camunda/webapps/camunda/commons/assets/ webapps/camunda/app/admin/assets
 
 COPY docker/camunda/webapps/camunda/commons/styles/ webapps/camunda/app/admin/styles
@@ -28,3 +30,5 @@ COPY docker/camunda/webapps/camunda/commons/assets/ webapps/camunda/app/tasklist
 COPY docker/camunda/webapps/camunda/commons/styles/ webapps/camunda/app/tasklist/styles
 
 COPY docker/camunda/webapps/camunda/tasklist/index.html webapps/camunda/app/tasklist
+
+COPY docker/camunda/webapps/camunda/tasklist/scripts/config.js webapps/camunda/app/tasklist/scripts
