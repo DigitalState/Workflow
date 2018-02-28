@@ -1,8 +1,9 @@
 FROM camunda/camunda-bpm-platform:tomcat-7.8.0
 
+RUN rm -r webapps/camunda-invoice
+
 COPY docker/camunda/conf/ conf
 
-# Copy third-party Java libraries
 COPY docker/camunda/lib/* lib
 
 COPY docker/camunda/webapps/camunda/commons/assets/ webapps/camunda/app/welcome/assets
