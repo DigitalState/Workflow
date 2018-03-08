@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
     camunda:
-        build: .
+        image: digitalstate/camunda:0.1.0
         environment:
             - JAVA_OPTS
             - VIRTUAL_HOST
