@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
     camunda:
-        image: digitalstate/camunda:0.1.0
+        image: 'digitalstate/camunda:${IMAGE_TAG}'
         environment:
             - JAVA_OPTS
             - VIRTUAL_HOST
