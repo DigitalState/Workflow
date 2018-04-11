@@ -1,5 +1,7 @@
 # Camunda
 
+[![Build Status](https://travis-ci.org/DigitalState/Camunda.svg?branch=develop)](https://travis-ci.org/DigitalState/Camunda)
+
 Camunda-BPM Microservice
 
 Camunda BPM is a BPM Engine that executes BPMN, DMN, and CMMN models.
