@@ -1,6 +1,7 @@
 # Camunda
 
 [![Build Status](https://travis-ci.org/DigitalState/Camunda.svg?branch=develop)](https://travis-ci.org/DigitalState/Camunda)
+[![Coverage Status](https://coveralls.io/repos/github/DigitalState/Camunda/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Camunda?branch=develop)
 
 Camunda-BPM Microservice
 
