@@ -1,4 +1,5 @@
 # Camunda
+
 Camunda-BPM Microservice
 
 Camunda BPM is a BPM Engine that executes BPMN, DMN, and CMMN models.
@@ -10,15 +11,15 @@ The DigitalState platform leverages Camunda across multiple microservices.  The 
 
 Camunda is the primary UI that the DigitalState platform uses for Camunda Process Instance overview:
 
-![Process Dashboard](./docs/resources/Process-Dashboard.png)
+![Process Dashboard](./documentation/resources/Process-Dashboard.png)
 
-![Process List](./docs/resources/Process-List.png)
+![Process List](./documentation/resources/Process-List.png)
 
-![Process Instance List](./docs/resources/Process-Instance-List.png)
+![Process Instance List](./documentation/resources/Process-Instance-List.png)
 
-![Process Instance Inspector](./docs/resources/Process-Instance-Inspector.png)
+![Process Instance Inspector](./documentation/resources/Process-Instance-Inspector.png)
 
-![Process Instance Inspector Task Selected](./docs/resources/Process-Instance-Inspector-Task-Selected.png)
+![Process Instance Inspector Task Selected](./documentation/resources/Process-Instance-Inspector-Task-Selected.png)
 
 
 
