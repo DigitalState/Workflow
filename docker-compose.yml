@@ -1,13 +1,13 @@
 version: '2.1'
 
 services:
-    camunda:
-        image: 'digitalstate/camunda:${IMAGE_TAG}'
-        environment:
-            - JAVA_OPTS
-            - VIRTUAL_HOST
+  camunda:
+    image: 'digitalstate/camunda:${IMAGE_TAG}'
+    environment:
+      - JAVA_OPTS
+      - VIRTUAL_HOST
 
 networks:
-    default:
-        external:
-          name: '${NETWORK}'
+  default:
+    external:
+      name: '${NETWORK}'
