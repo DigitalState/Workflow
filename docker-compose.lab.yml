@@ -2,7 +2,6 @@ version: '2.1'
 
 services:
   camunda:
-    build: .
     extra_hosts:
       - 'api.assets.lab.ds:${PROXY_HOST}'
       - 'api.authentication.lab.ds:${PROXY_HOST}'

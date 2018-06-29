@@ -2,7 +2,6 @@ version: '2.1'
 
 services:
   camunda:
-    build: .
     extra_hosts:
       - 'api.assets.ci.test.ds:${PROXY_HOST}'
       - 'api.authentication.ci.test.ds:${PROXY_HOST}'
