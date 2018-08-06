@@ -3,7 +3,7 @@ version: '2.1'
 services:
   camunda:
     image: 'digitalstate/camunda:${IMAGE_TAG}'
-    extra_hosts:
+    extra_hosts: &hosts
       - 'api.assets.stag.ds:${PROXY_HOST}'
       - 'api.authentication.stag.ds:${PROXY_HOST}'
       - 'api.camunda.stag.ds:${PROXY_HOST}'
@@ -20,3 +20,6 @@ services:
       - 'api.tasks.stag.ds:${PROXY_HOST}'
       - 'api.tenants.stag.ds:${PROXY_HOST}'
       - 'api.topics.stag.ds:${PROXY_HOST}'
+
+  registrator:
+    extra_hosts: *hosts

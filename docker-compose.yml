@@ -4,8 +4,18 @@ services:
   camunda:
     build: .
     environment:
-      - JAVA_OPTS
-      - VIRTUAL_HOST
+      JAVA_OPTS: '${JAVA_OPTS}'
+      VIRTUAL_HOST: '${VIRTUAL_HOST}'
+      SERVICE_ID: '${COMPOSE_PROJECT_NAME}camunda'
+      SERVICE_NAME: 'camunda'
+
+  registrator:
+    image: gliderlabs/registrator:v7
+    environment:
+      CONSUL_HTTP_TOKEN: '${DISCOVERY_CREDENTIAL}'
+    command: '-internal consul://${DISCOVERY_HOST}'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
 
 networks:
   default:
