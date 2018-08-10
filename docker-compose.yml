@@ -5,17 +5,9 @@ services:
     build: .
     environment:
       JAVA_OPTS: '${JAVA_OPTS}'
-      VIRTUAL_HOST: '${VIRTUAL_HOST}'
-      SERVICE_ID: '${COMPOSE_PROJECT_NAME}camunda'
-      SERVICE_NAME: 'camunda'
-
-  registrator:
-    image: gliderlabs/registrator:v7
-    environment:
-      CONSUL_HTTP_TOKEN: '${DISCOVERY_CREDENTIAL}'
-    command: '-internal consul://${DISCOVERY_HOST}'
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock
+      SERVICE_8080_ID: '${COMPOSE_PROJECT_NAME}_camunda_8080'
+      SERVICE_8080_NAME: '${COMPOSE_PROJECT_NAME}_camunda_8080'
+      SERVICE_8080_TAGS: 'proxy.enable=true,proxy.tags=external,proxy.frontend.entryPoints=http,proxy.frontend.rule=Host:${API_HOST}'
 
 networks:
   default:
