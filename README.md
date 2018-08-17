@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/DigitalState/Camunda.svg?branch=develop)](https://travis-ci.org/DigitalState/Camunda)
 [![Coverage Status](https://coveralls.io/repos/github/DigitalState/Camunda/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Camunda?branch=develop)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/DigitalState/Camunda/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/DigitalState/Camunda/?branch=develop)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Table of Contents
 
