@@ -7,5 +7,3 @@ services:
       default:
         aliases:
           - camunda_database_ui
-    ports:
-      - 5433:5433

@@ -13,8 +13,6 @@ services:
       default:
         aliases:
           - camunda_database
-    ports:
-      - 5432:5432
 
   camunda:
     image: digitalstate/camunda-camunda
@@ -26,8 +24,6 @@ services:
       DATASOURCE_PASSWORD: ${DATABASE_PASSWORD}
       ADMIN_USER: ${CAMUNDA_ADMIN_USER}
       ADMIN_PASSWORD: ${CAMUNDA_ADMIN_PASSWORD}
-    ports:
-      - 8099:80
 
 volumes:
   database_data: {}
