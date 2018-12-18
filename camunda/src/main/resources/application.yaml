@@ -1,0 +1,57 @@
+server:
+  port: 8090
+
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/book_db?createDatabaseIfNotExist=true
+#    username: postgres
+#    password: postgres
+
+# spring.jersey.application-path:myapplicationpath
+
+camunda:
+  bpm:
+    enabled: true
+    process-engine-name: default
+    history-level: FULL
+    history-level-default: FULL
+    auto-deployment-enabled: false
+    default-number-of-retries: 3
+    job-executor-acquire-by-priority: false
+
+    admin-user:
+      id: admin
+      password: admin
+      firstName: Admin
+
+    job-execution:
+      deployment-aware: false
+      core-pool-size: 3
+      keep-alive-seconds: 0
+      lock-time-in-millis: 300000
+      max-jobs-per-acquisition: 3
+      max-pool-size: 10
+      queue-capacity: 3
+      wait-time-in-millis: 5000
+      max-wait: 60000
+      backoff-time-in-millis: 0
+      max-backoff: 0
+      backoff-decrease-threshold: 100
+      wait-increase-factor: 2
+
+    database:
+      schema-update: true
+
+    webapp:
+      index-redirect-enabled: true
+    authorization:
+      enabled: false
+
+
+
+#logging:
+#  pattern:
+#    console: "%d %-5level %logger : %msg%n"
+#  level:
+#    org.springframework: INFO
