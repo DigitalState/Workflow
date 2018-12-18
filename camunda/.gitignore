@@ -53,3 +53,4 @@ log/
 !/primary.iml
 /.mvn/wrapper/maven-wrapper.jar
 /.idea/*
+/primary.iml
