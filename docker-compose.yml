@@ -21,11 +21,13 @@ services:
     build:
       context: ./camunda
     environment:
-      DATABASE_URL: jdbc:postgresql://camunda_database:5432/${DATABASE_NAME}?createDatabaseIfNotExist=true
-      DATABASE_USER: ${DATABASE_USER}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATASOURCE_URL: ${CAMUNDA_DATABASE_URL}
+      DATASOURCE_USER: ${DATABASE_USER}
+      DATASOURCE_PASSWORD: ${DATABASE_PASSWORD}
+      ADMIN_USER: ${CAMUNDA_ADMIN_USER}
+      ADMIN_PASSWORD: ${CAMUNDA_ADMIN_PASSWORD}
     ports:
-      - 8099:8099
+      - 8099:80
 
 volumes:
   database_data: {}

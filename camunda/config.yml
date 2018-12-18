@@ -1,12 +1,11 @@
 server:
-  port: 8099
+  port: 80
 
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: ${DATABASE_URL}
-    username: ${DATABASE_USER}
-    password: ${DATABASE_PASSWORD}
+    url: jdbc:${DATASOURCE_URL}
+    username: ${DATASOURCE_USER}
+    password: ${DATASOURCE_PASSWORD}
 
 # spring.jersey.application-path:myapplicationpath
 
@@ -21,9 +20,8 @@ camunda:
     job-executor-acquire-by-priority: false
 
     admin-user:
-      id: admin
-      password: admin
-      firstName: Admin
+      id: ${ADMIN_USER}
+      password: ${ADMIN_PASSWORD}
 
     job-execution:
       deployment-aware: false
