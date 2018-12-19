@@ -24,6 +24,10 @@ services:
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       ADMIN_USER: ${API_ADMIN_USER}
       ADMIN_PASSWORD: ${API_ADMIN_PASSWORD}
+    networks:
+      default:
+        aliases:
+          - workflow_api
 
 volumes:
   database_data: {}
