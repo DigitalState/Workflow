@@ -2,3 +2,6 @@ language: generic
 
 services:
   - docker
+
+script:
+  - docker-compose -f docker-compose.yml -f docker-compose.test.yml build
