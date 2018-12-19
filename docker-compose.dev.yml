@@ -6,4 +6,4 @@ services:
     networks:
       default:
         aliases:
-          - camunda_database_ui
+          - workflow_database_ui

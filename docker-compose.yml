@@ -12,18 +12,18 @@ services:
     networks:
       default:
         aliases:
-          - camunda_database
+          - workflow_database
 
-  camunda:
-    image: digitalstate/camunda-camunda
+  api:
+    image: digitalstate/workflow-api
     build:
-      context: ./camunda
+      context: ./api
     environment:
-      DATASOURCE_URL: ${CAMUNDA_DATABASE_URL}
-      DATASOURCE_USER: ${DATABASE_USER}
-      DATASOURCE_PASSWORD: ${DATABASE_PASSWORD}
-      ADMIN_USER: ${CAMUNDA_ADMIN_USER}
-      ADMIN_PASSWORD: ${CAMUNDA_ADMIN_PASSWORD}
+      DATABASE_URL: ${API_DATABASE_URL}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      ADMIN_USER: ${API_ADMIN_USER}
+      ADMIN_PASSWORD: ${API_ADMIN_PASSWORD}
 
 volumes:
   database_data: {}
