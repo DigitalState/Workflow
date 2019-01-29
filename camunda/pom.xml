@@ -2,10 +2,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.digitalstate.camunda</groupId>
     <artifactId>MainCamunda</artifactId>
-    <version>0.5</version>
+    <version>0.7</version>
 
     <properties>
         <start-class>io.digitalstate.camunda.mainms.MicroservicePrimary</start-class>
+        <camunda.version>7.10.0</camunda.version>
+        <camunda.springboot.version>3.2.0</camunda.springboot.version>
+        <camunda.spin.version>1.6.4</camunda.spin.version>
     </properties>
 
     <dependencyManagement>
@@ -13,9 +16,24 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.2.RELEASE</version>
+                <version>2.1.1.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <!-- Import dependency management from camunda -->
+                <groupId>org.camunda.bpm</groupId>
+                <artifactId>camunda-bom</artifactId>
+                <version>${camunda.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.camunda.spin</groupId>
+                <artifactId>camunda-spin-bom</artifactId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>${camunda.spin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -25,13 +43,27 @@
         <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
-            <version>3.0.0</version>
+            <version>${camunda.springboot.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-            <version>3.0.0</version>
+            <version>${camunda.springboot.version}</version>
+        </dependency>
+
+            <dependency>
+                <groupId>org.camunda.spin</groupId>
+                <artifactId>camunda-spin-core</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.camunda.spin</groupId>
+                <artifactId>camunda-spin-dataformat-all</artifactId>
+            </dependency>
+
+        <dependency>
+            <groupId>org.camunda.bpm</groupId>
+            <artifactId>camunda-engine-plugin-spin</artifactId>
         </dependency>
 
         <dependency>
