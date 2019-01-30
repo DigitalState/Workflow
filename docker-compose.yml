@@ -1,19 +1,33 @@
-version: '2.1'
+version: '3.4'
 
 services:
-  camunda:
-    build: .
+  database:
+    image: postgres:9.6-alpine
     environment:
-      JAVA_OPTS: '${JAVA_OPTS}'
-      SERVICE_ENTRYPOINT-PROD: '$${url}'
-      SERVICE_ENTRYPOINT-DEV: '$${url}'
-      SERVICE_ENTRYPOINT-TEST: '$${url}'
-      SERVICE_8000_IGNORE: 'true'
-      SERVICE_8080_ID: '${COMPOSE_PROJECT_NAME}_api_http'
-      SERVICE_8080_NAME: '${COMPOSE_PROJECT_NAME}_api_http'
-      SERVICE_8080_TAGS: 'proxy.enable=true,proxy.tags=external,proxy.frontend.entryPoints=http,proxy.frontend.rule=Host:${API_HOST}'
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+    networks:
+      default:
+        aliases:
+          - workflow_database
 
-networks:
-  default:
-    external:
-      name: '${NETWORK}'
+  api:
+    image: digitalstate/workflow-api
+    build:
+      context: ./api
+    environment:
+      DATABASE_URL: ${API_DATABASE_URL}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      ADMIN_USER: ${API_ADMIN_USER}
+      ADMIN_PASSWORD: ${API_ADMIN_PASSWORD}
+    networks:
+      default:
+        aliases:
+          - workflow_api
+
+volumes:
+  database_data: {}

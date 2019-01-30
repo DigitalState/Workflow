@@ -1,0 +1,18 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+
+camunda:
+  bpm:
+    admin-user:
+      id: ${ADMIN_USER}
+      password: ${ADMIN_PASSWORD}
+      email: admin@localhost
+      firstName: Admin
+      lastName: Admin

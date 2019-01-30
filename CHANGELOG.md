@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.15.0
+
+
 ## 0.14.0 (2018-10-29)
 
 ## 0.13.0 (2018-10-17)
@@ -8,7 +11,7 @@
 
 ## 0.11.0
 
-- Feature [Test] Refactor continious integration
+- Feature [Test] Refactor continuous integration
 
 ## 0.10.0
 
