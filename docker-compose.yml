@@ -15,7 +15,7 @@ services:
           - workflow_database
 
   api:
-    image: digitalstate/workflow:0.16.0
+    image: digitalstate/workflow:0.17.0
     environment:
       DATABASE_URL: ${API_DATABASE_URL}
       DATABASE_USER: ${DATABASE_USER}
