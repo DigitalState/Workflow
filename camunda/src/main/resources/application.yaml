@@ -10,6 +10,8 @@ server:
 
 # spring.jersey.application-path:myapplicationpath
 
+spring.jackson.time-zone: America/Montreal
+
 camunda:
   bpm:
     enabled: true
