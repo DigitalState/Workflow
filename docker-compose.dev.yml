@@ -4,6 +4,9 @@ services:
   api:
     build:
       context: ./api
+    volumes:
+      - ${DIRECTORY}/api/api.jar:/api.jar
+      - ${DIRECTORY}/api/config.yml:/config.yml
 
   database_ui:
     image: adminer:4-standalone
