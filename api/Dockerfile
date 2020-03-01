@@ -7,6 +7,8 @@ ENV DATABASE_PASSWORD !ChangeMe!
 ENV ADMIN_USER admin
 ENV ADMIN_PASSWORD !ChangeMe!
 
+ENV TIMEZONE UTC
+
 COPY api.jar /api.jar
 
 COPY config.yml /config.yml

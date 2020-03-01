@@ -22,6 +22,7 @@ services:
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       ADMIN_USER: ${API_ADMIN_USER}
       ADMIN_PASSWORD: ${API_ADMIN_PASSWORD}
+      TIMEZONE: ${API_TIMEZONE}
     networks:
       default:
         aliases:
