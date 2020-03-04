@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.18.0 (2020-03-03)
+
+- Feature [Task] Add custom task-search endpoint accepting TaskIdIn
+
 ## 0.17.0 (2019-07-14)
 
 ## 0.16.0

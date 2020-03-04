@@ -15,13 +15,14 @@ services:
           - workflow_database
 
   api:
-    image: digitalstate/workflow:0.17.0
+    image: digitalstate/workflow:0.18.0
     environment:
       DATABASE_URL: ${API_DATABASE_URL}
       DATABASE_USER: ${DATABASE_USER}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       ADMIN_USER: ${API_ADMIN_USER}
       ADMIN_PASSWORD: ${API_ADMIN_PASSWORD}
+      TIMEZONE: ${API_TIMEZONE}
     networks:
       default:
         aliases:

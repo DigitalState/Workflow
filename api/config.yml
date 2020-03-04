@@ -7,6 +7,8 @@ spring:
     url: jdbc:${DATABASE_URL}
     username: ${DATABASE_USER}
     password: ${DATABASE_PASSWORD}
+  jackson:
+    time-zone: ${TIMEZONE}
 
 camunda:
   bpm:
